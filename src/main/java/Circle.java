@@ -2,8 +2,8 @@
  * This class provides a simple Circle type that
  * creates and tracks instances of circles.
  *
- * @author (You & Me)
- * @version (2019-10-15)
+ * @Saniyah (You & Me)
+ * @0.2 (2019-10-15)
  */
 public class Circle
 {
@@ -17,7 +17,8 @@ public class Circle
      */
     public Circle()
     {
-
+        location = new Point(0,0);
+        setRadius(1.0);
     }
 
     /**
@@ -28,7 +29,8 @@ public class Circle
      */
     public Circle(double radius)
     {
-
+        setRadius(radius);
+        location = new Point(0,0);
     }
 
     /**
@@ -40,7 +42,8 @@ public class Circle
      */
     public Circle(Point location, double radius)
     {
-
+        setRadius(radius);
+        setLocation(location);
     }
 
     //accessors
@@ -51,7 +54,7 @@ public class Circle
      */
     public double getRadius()
     {
-
+        return radius;
     }
 
     /**
@@ -61,7 +64,7 @@ public class Circle
      */
     public Point getLocation()
     {
-
+        return new Point(location);
     }
 
     // mutator methods
@@ -72,7 +75,7 @@ public class Circle
      */
     public void setRadius(double radius)
     {
-
+        this.radius = radius;
     }
 
     /**
@@ -82,7 +85,7 @@ public class Circle
      */
     public void setLocation(Point location)
     {
-
+        this.location = new Point(location);
     }
 
     // other methods
@@ -94,7 +97,7 @@ public class Circle
      */
     public boolean contains(Point p)
     {
-
+        return location.distanceTo(p) <= radius;
     }
 
     /**
@@ -105,7 +108,7 @@ public class Circle
      */
     public boolean intersects(Circle aCircle)
     {
-
+        return this.location.distanceTo(aCircle.getLocation()) <= this.radius + aCircle.getRadius();
     }
 
     /**
